@@ -15,12 +15,13 @@ public class Contact {
         if (this == o) return true;
         if (!(o instanceof Contact)) return false;
         Contact contact = (Contact) o;
-        return number.equals(contact.number);
+        return name.equals(contact.name) &&
+                number.equals(contact.number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number);
+        return Objects.hash(name, number);
     }
 
     @Override
